@@ -1,7 +1,8 @@
+import { Link } from "gatsby"
 import { getImage } from "gatsby-plugin-image"
 import { GatsbyImage } from "gatsby-plugin-image"
 import React from "react"
-import { VideoCardContainer } from "./videoCard.style"
+import { CardHeading,CardFigure, VideoCardContainer, VideoLink, StyledImage } from "./videoCard.style"
 
 const VideoCard = ({
   key,
@@ -15,7 +16,14 @@ const VideoCard = ({
   console.log(slug)
   return (
     <VideoCardContainer>
-      <GatsbyImage image={getImage(videoImage)}/>
+      <VideoLink to={slug} title={title}>
+        <CardFigure>
+          <StyledImage image={getImage(videoImage)} alt={title} rounded />
+        </CardFigure>
+        <CardHeading>
+          {videoTitle}
+        </CardHeading>
+      </VideoLink>
     </VideoCardContainer>
   )
 }

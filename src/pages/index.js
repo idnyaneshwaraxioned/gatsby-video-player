@@ -6,6 +6,7 @@ import { convertToBgImage } from "gbimage-bridge"
 import BackgroundImage from "gatsby-background-image"
 import { Wrapper } from "../style/common.style"
 import VideoCard from "../components/videoCard"
+import { VideoContainer } from "../style/homepage.style"
 
 const HomePage = ({ data, ...props }) => {
   const image = getImage(data.homebackground)
@@ -15,19 +16,26 @@ const HomePage = ({ data, ...props }) => {
 
   return (
     <Layout>
-      <BackgroundImage tag="section" {...bgImage} preserveStackingContext>
+      <BackgroundImage
+        tag="section"
+        {...bgImage}
+        preserveStackingContext
+        className="backgroundImage"
+      >
         <Wrapper>
-          {videoData &&
-            videoData.map(videoMap => (
-              <VideoCard
-                key={videoMap.frontmatter.slug}
-                slug={videoMap.frontmatter.slug}
-                title={videoMap.frontmatter.title}
-                videoSourceURL={videoMap.frontmatter.videoSourceURL}
-                videoImage={videoMap.frontmatter.videoImage}
-                videoTitle={videoMap.frontmatter.videoTitle}
-              />
-            ))}
+          <VideoContainer>
+            {videoData &&
+              videoData.map(videoMap => (
+                <VideoCard
+                  key={videoMap.frontmatter.slug}
+                  slug={videoMap.frontmatter.slug}
+                  title={videoMap.frontmatter.title}
+                  videoSourceURL={videoMap.frontmatter.videoSourceURL}
+                  videoImage={videoMap.frontmatter.videoImage}
+                  videoTitle={videoMap.frontmatter.videoTitle}
+                />
+              ))}
+          </VideoContainer>
         </Wrapper>
       </BackgroundImage>
     </Layout>
