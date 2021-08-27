@@ -7,7 +7,7 @@ const Header = () => {
     <HeaderContainer>
       <HeaderWrapper>
         <h1>
-          <LogoLink to="/">Gatsby VideoPlayer</LogoLink>
+          <LogoLink to="/">Deepika Padukon</LogoLink>
         </h1>
         </HeaderWrapper>  
     </HeaderContainer>
