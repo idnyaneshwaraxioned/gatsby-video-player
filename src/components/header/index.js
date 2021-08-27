@@ -9,7 +9,7 @@ const Header = () => {
         <h1>
           <LogoLink to="/">Gatsby VideoPlayer</LogoLink>
         </h1>
-        </HeaderWrapper>
+        </HeaderWrapper>  
     </HeaderContainer>
   )
 }
